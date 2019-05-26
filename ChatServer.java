@@ -2,6 +2,7 @@ import java.net.*;
 import java.io.*;
 import java.util.*;
 
+//https://github.com/sora5421/SimpleChat
 public class ChatServer {
 
 	public static void main(String[] args) {
@@ -92,6 +93,8 @@ class ChatThread extends Thread{
 			}
 		}
 	} // sendmsg
+	////user's value convert object 
+	//if warn isn't null and msg is a warring word then, warn should convert PrintWriter and printout to user warring
 	public void broadcast(String msg, String user){
 		
 		Object obj = hm.get(user);
@@ -126,9 +129,11 @@ class ChatThread extends Thread{
 			}
 		}
 	} // broadcast
-	//send to user name for run method ,then user is not null
-	//convert Printwriter to user's pw
-	//Check if pw and user's pw are same ,then no println
+	//user's value convert object 
+	//if obj isn't null and msg is a warring word then, obj should convert PrintWriter and printout to user warring
+	//else (msg is not warring word)
+	//obj is null(user entered chat), use iterator printout all users
+	//obj is not null(user chat the word), change Printwriter is same to user's printwriter  not printout word	
 	
 	public void send_userlist(String user) {
 		int count = 0;
@@ -165,4 +170,7 @@ class ChatThread extends Thread{
 		
 		return false;
 	}
-}
+}//warring
+//Add to word in ArrayList
+//if addword contain line return true
+//else return false
