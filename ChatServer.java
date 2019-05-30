@@ -89,7 +89,7 @@ class ChatThread extends Thread{
 					PrintWriter pw = (PrintWriter)obj;
 					pw.println(id + " whisphered. : " + msg2);
 					pw.flush();
-				} // if
+				} // if obj is not null
 			}
 		}
 	} // sendmsg
